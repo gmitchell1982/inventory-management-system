@@ -215,3 +215,14 @@ create table InventoryManagementSystem.dbo.Conclusion(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.CameFrom(
+  CameFromID int identity(1,1) primary key not null,
+  SourceTable varchar(25) not null unique,
+  Testing bit not null,
+  Valuation bit not null,
+  Preparation bit not null,
+  Loss bit not null
+);
+
+------------------------------------
+
