@@ -84,3 +84,20 @@ create table InventoryManagementSystem.dbo.LossType(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.ReceiptTracking(
+ ReceiptID int identity(1,1) primary key not null,
+ AccountingRef varchar(50) unique not null,
+ InventoryItems int not null,
+ SalesTaxTotal smallmoney not null,
+ DonationsTotal smallmoney not null,
+ EquipmentTotal money not null,
+ SuppliesTotal money not null,
+ ReceiptTotal money not null,
+ Vendor int foreign key references dbo.Vendor(VendorID) not null,
+ Purchaser int foreign key references dbo.Users(UserID) not null,
+ WhoAdded int foreign key references dbo.Users(UserID) not null,
+ EntryDate date not null
+);
+
+-----------------------------------
+
