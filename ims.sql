@@ -108,3 +108,11 @@ create table InventoryManagementSystem.dbo.MakerBrand(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.MaterialType(
+  MaterialTypeID int identity(1,1) primary key not null,
+  Name varchar(25) not null unique,
+  Description varchar(max) not null
+);
+
+------------------------------------
+
