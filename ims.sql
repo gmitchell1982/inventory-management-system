@@ -345,3 +345,30 @@ create table InventoryManagementSystem.dbo.Listing(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Sales(
+  SalesID int identity(1,1) primary key not null,
+  InvoiceID varchar(max) not null,
+  ListingID int foreign key references dbo.Listing(ListingID) not null,
+  OfferAccepted bit not null,
+  AcceptanceDateTime datetime2 not null,
+  WhoAccepted int foreign key references dbo.Users(UserID) not null,
+  OfferValue smallmoney not null,
+  InvoiceSent bit not null,
+  PaymentReceived bit not null,
+  PaymentDateTime datetime2 not null,
+  ItemSaleValue smallmoney not null,
+  ShippingCost smallmoney not null,
+  BusSalesTax smallmoney not null,
+  PlatformSalesTax smallmoney not null,
+  PaymentMethod int not null,
+  PaymentVerified bit not null,
+  VerificationDateTime datetime2 not null,
+  VerificationMessageSent bit not null,
+  MediaRelocated bit not null,
+  ShippingNeeded bit not null,
+  CombinedShipping bit not null,
+  WhoVerified int foreign key references dbo.Users(UserID)
+);
+
+------------------------------------
+
