@@ -38,3 +38,12 @@ create table InventoryManagementSystem.dbo.Vendor(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.ListingPlatform(
+  PlatformID int identity(1,1) primary key not null,
+  Name varchar(25) not null unique,
+  Status int foreign key references dbo.StatusReference(StatusRefID) not null,
+  WhoAdded int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
