@@ -66,3 +66,12 @@ create table InventoryManagementSystem.dbo.ItemCategory(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.BundleDefinition(
+  BundleID int identity(1,1) primary key not null,
+  BundleCategory int foreign key references dbo.ItemCategory(ItemCategoryID) not null,
+  Description varchar(max) not null,
+  ReadyToPrep bit not null
+);
+
+------------------------------------
+
