@@ -155,3 +155,42 @@ create table InventoryManagementSystem.dbo.Inbound(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.NTP(
+  NTPID int identity(1,1) primary key not null,
+  InboundID int foreign key references dbo.Inbound(InboundID) not null,
+    ItemCategory int foreign key references dbo.ItemCategory(ItemCategoryID) not null,
+  ISBN varchar(20),
+  Title varchar(max),
+  Subtitle varchar(max),
+  Authors varchar(max),
+  Editors varchar(max),
+  Publisher varchar(100),
+  CoverType int not null,
+  YearID int not null,
+  Edition varchar(max),
+  Volume varchar(50),
+  Issue varchar(25),
+  Sleeve varchar(max),
+  Type varchar(max),
+  ContentCategory varchar(50),
+  Description varchar(max) not null,
+  ConditionNotes varchar(max) not null,
+  SpecialNotes varchar(max),
+  MakerBrand int foreign key references dbo.MakerBrand(MakerBrandID),
+  ModelNumber varchar(100),
+  SerialNumber varchar(100),
+  PackageCase varchar(max),
+  Accessories varchar(max),
+  Material int foreign key references dbo.MaterialType(MaterialTypeID),
+  Size varchar(100),
+  InboundTime int not null,
+  NaiveEvaluation smallmoney not null,
+  NTPEvaluation bit not null,
+  TestEvaluation bit not null,
+  NTPTime int not null,
+  WhoNTP int foreign key references dbo.Users(UserID) not null,
+  NTPDate date not null
+);
+
+------------------------------------
+
