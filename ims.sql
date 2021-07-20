@@ -255,3 +255,15 @@ create table InventoryManagementSystem.dbo.Testing(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Fixing(
+  FixingID int identity(1,1) primary key not null,
+  TestingID int foreign key references dbo.Testing(TestingID) not null,
+  WhatFixed varchar(max) not null,
+  FixCost smallmoney not null,
+  FixTime int not null,
+  WhoFixed int foreign key references dbo.Users(UserID) not null,
+  FixDate date not null
+);
+
+------------------------------------
+
