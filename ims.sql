@@ -226,3 +226,32 @@ create table InventoryManagementSystem.dbo.CameFrom(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Testing(
+  TestingID int identity(1,1) primary key not null,
+  CameFrom int foreign key references dbo.CameFrom(CameFromID) not null,
+  CameFromID int not null,
+  PhysicalCondition varchar(max),
+  MechanicalCondition varchar(max),
+  ElectricalCondition varchar(max),
+  NeedFixingEvaluation bit not null,
+  NaiveDiagnosis varchar(max),
+  ValueWorking smallmoney not null,
+  ValueBroken smallmoney not null,
+  ValueParted smallmoney not null,
+  ExpectedFixCost smallmoney not null,
+  ExpectedFixTime int not null,
+  ExpectedPartTime int not null,
+  HourlyRate smallmoney not null,
+  WorthFixing bit not null,
+  WorthParting bit not null,
+  ConflictResolver int foreign key references dbo.ConflictResolver(ConflictResolverID) not null,
+  Suggestion int foreign key references dbo.Suggestion(SuggestionID) not null,
+  WorthSuggestion bit not null,
+  Conclusion int foreign key references dbo.Conclusion(ConclusionID) not null,
+  TestingTime int not null,
+  WhoTested int foreign key references dbo.Users(UserID) not null,
+  TestingDate date not null
+);
+
+------------------------------------
+
