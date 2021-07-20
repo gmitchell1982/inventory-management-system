@@ -307,3 +307,21 @@ create table InventoryManagementSystem.dbo.Valuation(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Preparation(
+  PreparationID int identity(1,1) primary key not null,
+  CameFrom int foreign key references dbo.CameFrom(CameFromID) not null,
+  CameFromID int not null,
+  CleanComplete bit not null,
+  CleanCost smallmoney not null,
+  CleanTime int not null,
+  WhoCleaned int foreign key references dbo.Users(UserID) not null,
+  MediaTaken bit not null,
+  MediaOnSystem bit not null,
+  MediaPrepped bit not null,
+  MediaTime int not null,
+  WhoMedia int foreign key references dbo.Users(UserID) not null,
+  DateFinished date not null
+);
+
+------------------------------------
+
