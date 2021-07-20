@@ -20,3 +20,10 @@ create table InventoryManagementSystem.dbo.VendorType(
 
 -----------------------------------
 
+create table InventoryManagementSystem.dbo.StatusReference(
+  StatusRefID int identity(1,1) primary key not null,
+  StatusName varchar(10)
+);
+
+-----------------------------------
+
