@@ -290,3 +290,20 @@ create table InventoryManagementSystem.dbo.TechnicalParting(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Valuation(
+  ValuationID int identity(1,1) primary key not null,
+  CameFrom int foreign key references dbo.CameFrom(CameFromID) not null,
+  CameFromID int not null,
+  BestListPlatform int foreign key references dbo.ListingPlatform(PlatformID) not null,
+  ExpectedValue smallmoney not null,
+  ExpectedListCost smallmoney not null,
+  ShippingLimits varchar(max) not null,
+  BundleEval bit not null,
+  BundleID int foreign key references dbo.BundleDefinition(BundleID) not null,
+  ValuationTime int not null,
+  WhoValuated int foreign key references dbo.Users(UserID) not null,
+  ValuationDate date not null
+);
+
+------------------------------------
+
