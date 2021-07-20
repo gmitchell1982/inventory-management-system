@@ -267,3 +267,26 @@ create table InventoryManagementSystem.dbo.Fixing(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.TechnicalParting(
+  TechnicalPartingID int identity(1,1) primary key not null,
+  TestingID int foreign key references dbo.Testing(TestingID) not null,
+  ItemCategory int foreign key references dbo.ItemCategory(ItemCategoryID) not null,
+  YearID int,
+  Type varchar(max),
+  Description varchar(max) not null,
+  ConditionNotes varchar(max) not null,
+  SpecialNotes varchar(max),
+  MakerBrand int foreign key references dbo.MakerBrand(MakerBrandID) not null,
+  ModelNumber varchar(100),
+  SerialNumber varchar(100),
+  PackageCase varchar(max),
+  Accessories varchar(max),
+  Material int foreign key references dbo.MaterialType(MaterialTypeID),
+  NaiveEvaluation smallmoney not null,
+  TPTime int not null,
+  WhoParted int foreign key references dbo.Users(UserID) not null,
+  TPDate date not null
+);
+
+------------------------------------
+
