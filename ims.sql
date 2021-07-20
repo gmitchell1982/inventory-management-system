@@ -75,3 +75,12 @@ create table InventoryManagementSystem.dbo.BundleDefinition(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.LossType(
+  LossTypeID int identity(1,1) primary key not null,
+  Name varchar(25) not null unique,
+  Description varchar(max) not null,
+  WhoAdded int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
