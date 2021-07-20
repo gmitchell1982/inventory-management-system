@@ -12,3 +12,11 @@ create table InventoryManagementSystem.dbo.Users(
 );
 
 -----------------------------------
+
+create table InventoryManagementSystem.dbo.VendorType(
+  VendorTypeID int identity(1,1) primary key not null,
+  Description varchar(max) not null
+);
+
+-----------------------------------
+
