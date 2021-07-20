@@ -325,3 +325,23 @@ create table InventoryManagementSystem.dbo.Preparation(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Listing(
+  ListingID int identity(1,1) primary key not null,
+  PreparationID int foreign key references dbo.Preparation(PreparationID) not null,
+  ListingPlatform int foreign key references dbo.ListingPlatform(PlatformID) not null,
+  ListStatus int not null,
+  AskingPrice smallmoney not null,
+  HopingPrice smallmoney not null,
+  MinAccept smallmoney not null,
+  MediaRelocated bit not null,
+  SMPosts bit not null,
+  ListTime int not null,
+  WhoListed int foreign key references dbo.Users(UserID) not null,
+  FirstListDate date not null,
+  LastListDate date not null,
+  CumulativeListCosts smallmoney not null,
+  ListCostNotes varchar(max)
+);
+
+------------------------------------
+
