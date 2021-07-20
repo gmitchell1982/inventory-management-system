@@ -101,3 +101,10 @@ create table InventoryManagementSystem.dbo.ReceiptTracking(
 
 -----------------------------------
 
+create table InventoryManagementSystem.dbo.MakerBrand(
+  MakerBrandID int identity(1,1) primary key not null,
+  Name varchar(50) unique not null
+);
+
+------------------------------------
+
