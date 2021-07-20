@@ -56,3 +56,13 @@ create table InventoryManagementSystem.dbo.ShippingPlatform(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.ItemCategory(
+  ItemCategoryID int identity(1,1) primary key not null,
+  Name varchar(25) not null unique,
+  Description varchar(max) not null,
+  InboundVector varchar(50) not null,
+  WhoAdded int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
