@@ -208,3 +208,10 @@ create table InventoryManagementSystem.dbo.Suggestion(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Conclusion(
+  ConclusionID int identity(1,1) primary key not null,
+  Result varchar(15) not null
+);
+
+------------------------------------
+
