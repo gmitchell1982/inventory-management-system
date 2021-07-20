@@ -27,3 +27,14 @@ create table InventoryManagementSystem.dbo.StatusReference(
 
 -----------------------------------
 
+create table InventoryManagementSystem.dbo.Vendor(
+  VendorID int identity(1,1) primary key not null,
+  Name varchar(30) not null unique,
+  VendorType int foreign key references dbo.VendorType(VendorTypeID) not null,
+  Location varchar(max) not null,
+  Status int foreign key references dbo.StatusReference(StatusRefID) not null,
+  WhoAdded int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
