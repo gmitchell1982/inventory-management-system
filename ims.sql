@@ -201,3 +201,10 @@ create table InventoryManagementSystem.dbo.ConflictResolver(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Suggestion(
+  SuggestionID int identity(1,1) primary key not null,
+  Result varchar(15) not null unique
+);
+
+------------------------------------
+
