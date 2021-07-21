@@ -56,7 +56,7 @@ SQL Server was chosen for this project due to its breadth of use in industry.
 * Project Originator: Gerald L. Mitchell [Link to GitHub Portfolio](https://github.com/gmitchell1982)
 
 ## License
-
+Currently, all rights are reserved by Gerald L. Mitchell. If I can get proper permissions to move forward from previous clients, the license may change in the future.
 
 ## How To Contribute
 As a portfolio piece, this project has no current need for contribution.
