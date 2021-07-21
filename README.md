@@ -18,25 +18,25 @@ This redo for my portfolio forgoes the vast proprietary interface and seeks to t
 When complete, this project will also include a companion database dictionary.
 
 ### Project Completion Needs
-[ ] Adjust the identity on some tables to account for not null but awaiting input statuses in foreign key references like the original project did
-[ ] Add code to initialize any necessary information in tables
-[ ] Build the database dictionary
-[ ] Set up a sample dataset to show how it works
-[ ] Fill out Installation section of readme
-[ ] Fill out Instructions section of readme
-[ ] Fill out License section of readme
-[ ] Fill out Test Cases & Examples section of readme
-[ ] Fill out Table of Contents section of readme (if file is too long, else delete that section)
-[x] Push project to GitHub (requires setting up new GitHub repository)
-[ ] Attach project to portfolio page
+- [ ] Adjust the identity on some tables to account for not null but awaiting input statuses in foreign key references like the original project did
+- [ ] Add code to initialize any necessary information in tables
+- [ ] Build the database dictionary
+- [ ] Set up a sample dataset to show how it works
+- [ ] Fill out Installation section of readme
+- [ ] Fill out Instructions section of readme
+- [ ] Fill out License section of readme
+- [ ] Fill out Test Cases & Examples section of readme
+- [ ] Fill out Table of Contents section of readme (if file is too long, else delete that section)
+- [x] Push project to GitHub (requires setting up new GitHub repository)
+- [ ] Attach project to portfolio page
 
 ### Future Plans
 These would need to be parsed into actual achieveable goal-steps before starting them.
-[ ] Setup database creation and initialization code so that databse can be named whatever the user wants
-[ ] Get permission from previous client to add in the views and process control tables that really allow this database to work as intended
-[ ] Redo the old-project interface to work with this database (preferably in a less OS-dependent language)
-[ ] Setup connection allowances for supply management system, accounting system, physical asset and equipment management system, and various reporting tools
-[ ] Add in allowances for also tracking traditional-type inventory as well
+- [ ] Setup database creation and initialization code so that databse can be named whatever the user wants
+- [ ] Get permission from previous client to add in the views and process control tables that really allow this database to work as intended
+- [ ] Redo the old-project interface to work with this database (preferably in a less OS-dependent language)
+- [ ] Setup connection allowances for supply management system, accounting system, physical asset and equipment management system, and various reporting tools
+- [ ] Add in allowances for also tracking traditional-type inventory as well
 
 
 ### Technology Used & Why
