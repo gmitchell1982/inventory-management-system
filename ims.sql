@@ -422,3 +422,28 @@ create table InventoryManagementSystem.dbo.Returns(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Loss(
+  LossID int identity(1,1) primary key not null,
+  CameFrom int foreign key references dbo.CameFrom(CameFromID) not null,
+  CameFromID int not null,
+  LossTypeID int foreign key references dbo.LossType(LossTypeID) not null,
+  LossDate date not null,
+  LossRecord varchar(max) not null,
+  LossDetails varchar(max) not null,
+  WhoRecordedLoss int foreign key references dbo.Users(UserID) not null,
+  PoliceReportNeeded bit not null,
+  PoliceReportDate date not null,
+  PoliceReportNumber varchar(max) not null,
+  PoliceComplete bit not null,
+  WhoPolice int foreign key references dbo.Users(UserID) not null,
+  InsuranceReportNeeded bit not null,
+  InsuranceReportDate date not null,
+  InsuranceReportNumber varchar(max) not null,
+  InsuranceComplete bit not null,
+  WhoInsurance int foreign key references dbo.Users(UserID) not null,
+  AccountingReportSent bit not null,
+  WhoAccounting int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
