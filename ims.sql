@@ -372,3 +372,28 @@ create table InventoryManagementSystem.dbo.Sales(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Shipping(
+  ShippingID int identity(1,1) primary key not null,
+  SalesID int foreign key references dbo.Sales(SalesID) not null,
+  CustomerSelected int foreign key references dbo.ShippingPlatform(ShippingPlatformID) not null,
+  BestOption int foreign key references dbo.ShippingPlatform(ShippingPlatformID) not null,
+  LabelPurchased bit not null,
+  LabelCost smallmoney not null,
+  LabelPrinted bit not null,
+  PackingSlipPrinted bit not null,
+  TrackingProvided bit not null,
+  TrackingNumber varchar(max),
+  TrackingSent bit not null,
+  ShipDateTime datetime2 not null,
+  ShipTime int not null,
+  WhoShipped int foreign key references dbo.Users(UserID) not null,
+  TakenToShipper bit not null,
+  PickedUp bit not null,
+  TakenToCustomer bit not null,
+  DeliveryDateTime datetime2 not null,
+  DeliveryTime int not null,
+  WhoDelivered int foreign key references dbo.Users(UserID) not null
+);
+
+------------------------------------
+
