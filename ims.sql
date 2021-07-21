@@ -397,3 +397,28 @@ create table InventoryManagementSystem.dbo.Shipping(
 
 ------------------------------------
 
+create table InventoryManagementSystem.dbo.Returns(
+  ReturnsID int identity(1,1) primary key not null,
+  ShippingID int foreign key references dbo.Shipping(ShippingID) not null,
+  CheckedAgainstEvidence bit not null,
+  WhoChecked int foreign key references dbo.Users(UserID) not null,
+  LegalNeeded bit not null,
+  LegalTaken bit not null,
+  LegalResolved bit not null,
+  ResolutionNotes varchar(max),
+  WhoLegal int foreign key references dbo.Users(UserID) not null,
+  ReturnedToInbound bit not null,
+  NewInboundID int foreign key references dbo.Inbound(InboundID) not null,
+  RefundNeeded bit not null,
+  RefundTotal smallmoney not null,
+  RefundReceiptSent bit not null,
+  OtherRefundCosts smallmoney not null,
+  RefundNotes varchar(max),
+  WhoRefunded int foreign key references dbo.Users(UserID) not null,
+  ReturnDate datetime2 not null,
+  ReturnCompleteDate datetime2 not null,
+  CumulativeReturnTime int not null
+);
+
+------------------------------------
+
