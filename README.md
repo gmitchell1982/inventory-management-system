@@ -27,7 +27,7 @@ When complete, this project will also include a companion database dictionary.
 [ ] Fill out License section of readme
 [ ] Fill out Test Cases & Examples section of readme
 [ ] Fill out Table of Contents section of readme (if file is too long, else delete that section)
-[ ] Push project to GitHub (requires setting up new GitHub repository)
+[x] Push project to GitHub (requires setting up new GitHub repository)
 [ ] Attach project to portfolio page
 
 ### Future Plans
